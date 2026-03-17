@@ -1,0 +1,38 @@
+Package: RiboBA
+Type: Package
+Title: Bias-Aware Framework for Robust ORF Detection
+Version: 0.0.1
+Depends:
+    R (>= 4.1.0)
+Authors@R: person(given = "Junyu", family = "Bai", role = c("aut", "cre"), email = "bai.junyu.bio@gmail.com")
+Author: Junyu Bai [aut, cre]
+Maintainer: Junyu Bai <bai.junyu.bio@gmail.com>
+Description: RiboBA is a bias-aware framework for robust ORF detection
+    across diverse ribosome profiling datasets.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Imports:
+    BSgenomeForge,
+    BiocGenerics,
+    Biostrings,
+    GenomeInfoDb,
+    GenomicFeatures,
+    IRanges,
+    Matrix,
+    Rsamtools,
+    S4Vectors,
+    XVector,
+    devtools,
+    dfoptim,
+    dplyr,
+    matrixStats,
+    ranger,
+    rtracklayer,
+    stringr,
+    txdbmaker,
+    xgboost
+Suggests:
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
