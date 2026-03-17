@@ -1,7 +1,7 @@
 Package: RiboBA
 Type: Package
 Title: Bias-Aware Framework for Robust ORF Detection
-Version: 0.0.1
+Version: 0.9.0
 Depends:
     R (>= 4.1.0)
 Authors@R: person(given = "Junyu", family = "Bai", role = c("aut", "cre"), email = "bai.junyu.bio@gmail.com")
