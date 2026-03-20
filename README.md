@@ -8,7 +8,7 @@ It provides a probabilistic framework for robust ORF identification across diver
 
 If you use RiboBA, please cite:
 
-Bai J, Yang R.  *RiboBA: a bias-aware probabilistic framework for robust ORF identification across diverse ribosome profiling protocols* . bioRxiv [Preprint]. 2026.
+Bai, Junyu, and Ruolin Yang. “RiboBA: A Bias-Aware Probabilistic Framework for Robust ORF Identification across Diverse Ribosome Profiling Protocols.” Preprint, bioRxiv, March 19, 2026. https://doi.org/10.64898/2026.03.17.712439.
 
 ## Requirements
 
