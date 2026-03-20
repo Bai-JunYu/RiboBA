@@ -14,7 +14,7 @@ Bai J, Yang R.  *RiboBA: a bias-aware probabilistic framework for robust ORF ide
 
 ### R environment
 
-* R >= 4.1.0
+* R >= 4.5
 * R package dependencies listed in `DESCRIPTION` under `Imports` and `Suggests`
 
 ### External tools
@@ -28,8 +28,9 @@ For `R/prepare_bam.sh`, the following command-line tools are required:
 ## Installation
 
 ```r
-install.packages("devtools")
-devtools::install_github("Bai-JunYu/RiboBA")
+options(repos = c(CRAN = "https://cloud.r-project.org"))
+install.packages("pak")
+pak::pkg_install("Bai-JunYu/RiboBA")
 ```
 
 ## Example (Human GRCh38)
