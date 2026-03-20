@@ -6414,7 +6414,7 @@ model_pos <- train_features(
         params = params,
         data = dtrain,
         nrounds = 1000,
-        watchlist = list(train = dtrain, val = dval),
+        evals = list(train = dtrain, val = dval),
         early_stopping_rounds = 100,
         verbose = 0
       )
