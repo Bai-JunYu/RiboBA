@@ -6579,8 +6579,7 @@ model_pos <- train_features(
       }
       near_atg <- predict(
         model_start$bst,
-        lst_nonstart$start_atg_info,
-        iterationrange = c(1, model_start$bst$best_iteration)
+        lst_nonstart$start_atg_info
       )
       hit_start <- lst_nonstart$hit_start[near_atg >= model_start$t_opt]
       near_atg <- sapply(
@@ -6623,8 +6622,7 @@ model_pos <- train_features(
     } else {
       start_prob <- predict(
         model_start$bst,
-        lst_start$start_atg_info,
-        iterationrange = c(1, model_start$bst$best_iteration)
+        lst_start$start_atg_info
       )
       grp <- factor(hit_start@to, levels = unique(hit_start@to))
       row_id <- seq_along(hit_start@to)
@@ -6696,8 +6694,7 @@ model_pos <- train_features(
       } else {
         near_atg_prob2 <- predict(
           model_start$bst,
-          lst_nonstart2$start_atg_info,
-          iterationrange = c(1, model_start$bst$best_iteration)
+          lst_nonstart2$start_atg_info
         )
 
         probs <- as.numeric(near_atg_prob2)
@@ -7422,8 +7419,7 @@ get_features_lncrna <- function(ribo_num_lnc,
       }
       near_atg <- predict(
         model_start$bst,
-        lst_nonstart$start_atg_info,
-        iterationrange = c(1, model_start$bst$best_iteration)
+        lst_nonstart$start_atg_info
       )
       hit_start <- lst_nonstart$hit_start[near_atg >= model_start$t_opt]
       near_atg <- sapply(
@@ -7492,8 +7488,7 @@ ribo_num = infer_ribo_lncrna(
     } else {
       start_prob <- predict(
         model_learned$model_orf$model_start$bst,
-        lst_start$start_atg_info,
-        iterationrange = c(1, model_learned$model_orf$model_start$bst$best_iteration)
+        lst_start$start_atg_info
       )
       grp <- factor(hit_start@to, levels = unique(hit_start@to))
       row_id <- seq_along(hit_start@to)
@@ -7565,8 +7560,7 @@ ribo_num = infer_ribo_lncrna(
       } else {
         near_atg_prob2 <- predict(
           model_learned$model_orf$model_start$bst,
-          lst_nonstart2$start_atg_info,
-          iterationrange = c(1, model_learned$model_orf$model_start$bst$best_iteration)
+          lst_nonstart2$start_atg_info
         )
 
         probs <- as.numeric(near_atg_prob2)
