@@ -6433,10 +6433,10 @@ model_pos <- train_features(
       }
 
       ## ---- Predict ----
-      pred_prob_val <- predict(bst, dval, iterationrange = c(1, bst$best_iteration))
+      pred_prob_val <- predict(bst, dval)
 
 
-      pred <- predict(bst, dval, iterationrange = c(1, bst$best_iteration))
+      pred <- predict(bst, dval)
       ths <- seq(0, 1, by = 0.001)
       f1 <- function(t, p, y) {
         prd <- as.integer(p >= t)
