@@ -10,7 +10,7 @@ run_riboba_pipeline(transcript.file, bam_dir, RNase = "rnase-i")
 \item{transcript.file}{Path to an \code{.RData} file produced by the preprocessing
 helpers that contains transcript annotations and candidate ORFs.}
 
-\item{bam_dir}{Directory produced by \code{prepare_bam.sh}, containing
+\item{bam_dir}{Directory produced by \code{\link[=prepare_bam]{prepare_bam()}}, containing
 \verb{*_cds_txsorted.bam(.bai)} and \verb{*_lncrna_txsorted.bam(.bai)}.}
 
 \item{RNase}{RNase digestion paradigm. Default is \code{"rnase-i"};

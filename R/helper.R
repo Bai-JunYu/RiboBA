@@ -4720,7 +4720,7 @@ merge_orf_annotations <- function(
 #'
 #' @param transcript.file Path to an `.RData` file produced by the preprocessing
 #'   helpers that contains transcript annotations and candidate ORFs.
-#' @param bam_dir Directory produced by `prepare_bam.sh`, containing
+#' @param bam_dir Directory produced by [prepare_bam()], containing
 #'   `*_cds_txsorted.bam(.bai)` and `*_lncrna_txsorted.bam(.bai)`.
 #' @param RNase RNase digestion paradigm. Default is `"rnase-i"`;
 #'   alternatives are `"mnase"` and `"p1"`.

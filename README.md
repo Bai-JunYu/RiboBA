@@ -19,7 +19,7 @@ Bai, Junyu, and Ruolin Yang. “RiboBA: A Bias-Aware Probabilistic Framework for
 
 ### External tools
 
-For `R/prepare_bam.sh`, the following command-line tools are required:
+For `prepare_bam()` (which calls a bundled shell script), the following command-line tools are required:
 
 * `bowtie` / `bowtie-build` (Bowtie 1.3)
 * `samtools` (recommended >= 1.10)
@@ -55,17 +55,18 @@ build_annotation_index(
 
 ### Step 2. Prepare transcriptome-aligned BAM files
 
-Generate transcriptome-aligned BAM files from adapter-trimmed FASTQ files using the provided shell script.
+Generate transcriptome-aligned BAM files from adapter-trimmed FASTQ files using `prepare_bam()`.
 
-```bash
-bash R/prepare_bam.sh \
-  --workdir "/path/to/workdir" \          # working directory for indices, logs, and BAM files
-  --fastq-dir "/path/to/fastq" \          # directory containing adapter-trimmed FASTQ files
-  --annotate-dir "/path/to/annotation" \  # same output_dir used in build_annotation_index()
-  --genome-file "/path/to/GRCh38.fa" \    # same reference genome FASTA used above
-  --species "Homo sapiens" \              # species name used by the script
-  --rrna-fa "/path/to/rRNA.fa" \          # rRNA FASTA for depletion
-  --threads 8
+```r
+prepare_bam(
+  workdir      = "/path/to/workdir",     # working directory for indices, logs, and BAM files
+  fastq_dir    = "/path/to/fastq",       # directory containing adapter-trimmed FASTQ files
+  annotate_dir = "/path/to/annotation",  # same output_dir used in build_annotation_index()
+  genome_file  = "/path/to/GRCh38.fa",   # same reference genome FASTA used above
+  species      = "Homo sapiens",         # species name used by the script
+  rrna_fa      = "/path/to/rRNA.fa",     # rRNA FASTA for depletion
+  threads      = 8
+)
 ```
 
 ### Step 3. Run the RiboBA pipeline
