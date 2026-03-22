@@ -256,7 +256,8 @@ build_annotation_index <- function(
       )[, -1:-4]
     ) == 0L
 
-    flt_tx_lens <- flt_tx_lens[match(names(flt_tx_seqs), flt_tx_lens$tx_name), , drop = FALSE]
+    flt_tx_lens <- flt_tx_lens[
+      match(names(flt_tx_seqs), flt_tx_lens$tx_name), , drop = FALSE]
     mix_tx <- Biostrings::xscat(unlist(flt_tx_seqs))
 
     # add structure information
