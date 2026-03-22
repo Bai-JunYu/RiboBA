@@ -19,7 +19,9 @@ Bai, Junyu, and Ruolin Yang. “RiboBA: A Bias-Aware Probabilistic Framework for
 
 ### External tools
 
-For `prepare_bam()` (which calls a bundled shell script), the following command-line tools are required:
+Step 2 (`prepare_bam()`) requires Linux/macOS (or Windows via WSL2); native Windows cmd/PowerShell is not supported.
+Windows users can skip Step 2 if they already have prepared `*_cds_txsorted.bam(.bai)` and `*_lncrna_txsorted.bam(.bai)` files aligned to the Step 1 transcript references (`longest_txs.fa` and `lncRNA_txs.fa`), then run Step 3 directly.
+Required tools:
 
 * `bowtie` / `bowtie-build` (Bowtie 1.3)
 * `samtools` (recommended >= 1.10)
