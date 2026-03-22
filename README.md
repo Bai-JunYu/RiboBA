@@ -1,8 +1,6 @@
 # RiboBA
 
-is an R package for bias-aware ORF detection from ribosome profiling (Ribo-seq) data.
-
-It provides a probabilistic framework for robust ORF identification across diverse Ribo-seq protocols.
+RiboBA is an R package for bias-aware ORF detection from ribosome profiling (Ribo-seq) data.
 
 ## Citation
 
@@ -12,16 +10,15 @@ Bai, Junyu, and Ruolin Yang. “RiboBA: A Bias-Aware Probabilistic Framework for
 
 ## Requirements
 
-### R environment
+### R
 
 * R >= 4.5
 * R package dependencies listed in `DESCRIPTION` under `Imports` and `Suggests`
 
 ### External tools
 
-Step 2 (`prepare_bam()`) requires Linux/macOS (or Windows via WSL2); native Windows cmd/PowerShell is not supported.
-Windows users can skip Step 2 if they already have prepared `*_cds_txsorted.bam(.bai)` and `*_lncrna_txsorted.bam(.bai)` files aligned to the Step 1 transcript references (`longest_txs.fa` and `lncRNA_txs.fa`), then run Step 3 directly.
-Required tools:
+Step 2 (`prepare_bam()`) requires Linux/macOS (or Windows via WSL2). Native Windows cmd/PowerShell is not supported.
+Windows users can skip Step 2 if they already have `*_cds_txsorted.bam(.bai)` and `*_lncrna_txsorted.bam(.bai)` aligned to Step 1 transcript references (`longest_txs.fa`, `lncRNA_txs.fa`).
 
 * `bowtie` / `bowtie-build` (Bowtie 1.3)
 * `samtools` (recommended >= 1.10)
@@ -37,13 +34,7 @@ pak::pkg_install("Bai-JunYu/RiboBA")
 
 ## Example (Human GRCh38)
 
-The example below illustrates a typical workflow using human GRCh38 reference files.
-
-Replace all placeholder paths with your own file locations.
-
-### Step 1. Build annotation resources
-
-Build transcript annotation resources from the reference genome FASTA and GTF/GFF annotation file.
+### Step 1. Build annotation resources (once per genome/annotation)
 
 ```r
 library(RiboBA)
@@ -56,8 +47,6 @@ build_annotation_index(
 ```
 
 ### Step 2. Prepare transcriptome-aligned BAM files
-
-Generate transcriptome-aligned BAM files from adapter-trimmed FASTQ files using `prepare_bam()`.
 
 ```r
 prepare_bam(
@@ -72,8 +61,6 @@ prepare_bam(
 ```
 
 ### Step 3. Run the RiboBA pipeline
-
-Run the main RiboBA pipeline using the generated transcript metadata and BAM directory.
 
 ```r
 res <- run_riboba_pipeline(
