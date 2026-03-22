@@ -6410,14 +6410,20 @@ model_pos <- train_features(
         colsample_bytree = 0.8
       )
 
-      bst <- xgboost::xgb.train(
+      eval_list <- list(train = dtrain, val = dval)
+      train_args <- list(
         params = params,
         data = dtrain,
         nrounds = 1000,
-        evals = list(train = dtrain, val = dval),
         early_stopping_rounds = 100,
         verbose = 0
       )
+      if ("evals" %in% names(formals(xgboost::xgb.train))) {
+        train_args$evals <- eval_list
+      } else {
+        train_args$watchlist <- eval_list
+      }
+      bst <- do.call(xgboost::xgb.train, train_args)
       eval_log <- bst$evaluation_log
       best_iter <- bst$best_iteration
       if (!is.null(eval_log) && nrow(eval_log) >= best_iter && "val_aucpr" %in% colnames(eval_log)) {
