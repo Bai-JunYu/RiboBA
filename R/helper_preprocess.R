@@ -775,7 +775,7 @@ build_annotation_index <- function(
   )
   txdb <- txdbmaker::makeTxDbFromGFF(
     file = gff_file,
-    format = "gtf",
+    format = "auto",
     chrominfo = df_seqinfo
   )
 
