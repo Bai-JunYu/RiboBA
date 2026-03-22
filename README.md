@@ -65,7 +65,7 @@ prepare_bam(
   genome_file  = "/path/to/GRCh38.fa",   # same reference genome FASTA used above
   species      = "Homo sapiens",         # species name used by the script
   rrna_fa      = "/path/to/rRNA.fa",     # rRNA FASTA for depletion
-  threads      = 8
+  threads      = 16
 )
 ```
 

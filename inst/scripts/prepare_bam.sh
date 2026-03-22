@@ -31,7 +31,7 @@ SPECIES=""
 RRNA_FA=""
 CDS_FA=""
 LNCRNA_FA=""
-THREADS="12"
+THREADS="16"
 
 read_config_value() {
   local key="$1"

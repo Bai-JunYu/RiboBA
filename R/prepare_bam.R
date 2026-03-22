@@ -47,7 +47,7 @@ prepare_bam <- function(
     species = NULL,
     cds_fa = NULL,
     lncrna_fa = NULL,
-    threads = 12,
+    threads = 16,
     config = NULL,
     script = prepare_bam_script_path(),
     stdout = "",
