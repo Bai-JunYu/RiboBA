@@ -48,15 +48,17 @@ build_annotation_index(
 
 ### Step 2. Prepare transcriptome-aligned BAM files
 
+Required: `workdir`, `fastq_dir`, `rrna_fa`, and either `annotate_dir` or both `cds_fa` + `lncrna_fa`.
+
 ```r
 prepare_bam(
   workdir      = "/path/to/workdir",     # working directory for indices, logs, and BAM files
   fastq_dir    = "/path/to/fastq",       # directory containing adapter-trimmed FASTQ files
-  annotate_dir = "/path/to/annotation",  # same output_dir used in build_annotation_index()
-  genome_file  = "/path/to/GRCh38.fa",   # same reference genome FASTA used above
-  species      = "Homo sapiens",         # species name used by the script
-  rrna_fa      = "/path/to/rRNA.fa",     # rRNA FASTA for depletion
+  rrna_fa      = "/path/to/rRNA.fa",     # provide local rRNA FASTA, or let script download with species/genome_file
+  annotate_dir = "/path/to/annotation",  # from Step 1
   threads      = 16
+  # genome_file = "/path/to/GRCh38.fa",  # optional, used for species inference
+  # species     = "Homo sapiens"         # optional, mainly for rRNA auto-download
 )
 ```
 
